@@ -1,0 +1,871 @@
+
+
+
+a {
+  text-decoration: none;
+}
+
+body{
+  font-family: 'Lato';
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: normal;
+  color: #111111;
+  background: #E5E5E5;
+}
+
+.wrapper{
+  max-width: 1230px;
+  margin: 0 auto;
+}
+
+
+
+.main{
+  background: #E5E5E5;
+  margin-bottom: 122px;
+}
+
+/* Кнопка наверх */
+.scrollup{
+  z-index: 2198;
+  width: 120px;
+  height: 58px;
+  opacity:0.6;
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  display:none;
+  text-indent:-9999px;
+  background: url('../img/button_up.png') no-repeat;
+}
+
+/* бургер */
+.header__burger-btn{
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+}
+
+.header__burger-btn span{
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #111111;
+  left: 5px;
+}
+
+.header__burger-btn span:nth-child(1){
+  transform: translateY(-10px);
+}
+
+.header__burger-btn span:nth-child(3){
+  transform: translateY(10px);
+}
+
+/* почему-то не работает разворот */
+.header__list.open .header__burger-btn span:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+.header__list.open .header__burger-btn span:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
+}
+.header__list.open .header__burger-btn span{
+  background-color: #fff;
+}
+/* по сюда */
+
+
+@media (max-width:1085px){
+  .header__burger-btn{
+    display: block;
+    z-index: 3000;
+  }
+
+  .header__list{
+    position: absolute;
+    top: 0;
+    left: -350px;
+    width: 225px;
+    background: #3257A4;
+    border-radius: 0 0px 20px 0px;
+    opacity: 0.9;
+    padding: 155px 10px 10px 10px;
+    align-items:flex-start;
+    flex-direction:column;
+    transition: transform .5s;
+  }
+
+  .header__list.open {
+    transform: translateX(154%);
+  }
+
+  .header__link{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    font-weight: 700;
+  }
+
+  .header__nav{
+    display: block;
+  }
+
+  .header__item{
+    margin-bottom: 25px;
+    font-size: 20px;
+    color: #FFFFFF;
+    display: block;
+  }
+
+  /* скрытие других элементов при определенном разрешении */
+  .header__call_tel-link{
+    position: absolute;
+    left: -350px;
+    top: 0;
+  }
+  .header__tel_number{
+    position: absolute;
+    left: -350px;
+    top: 0;
+  }
+}
+
+@media (max-width:650px){
+  .header__search{
+    position: absolute;
+    left: -350px;
+    top: 0;
+  }
+}
+
+
+.call{
+  z-index: 2198;
+  width: 58px;
+  height: 58px;
+  opacity:0.6;
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  text-indent:-9999px;
+  background: url('../img/call_button.png') no-repeat;
+}
+
+
+/* Шапка */
+.header{
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  left: 0;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 30px rgba(50, 87, 164, 0.1);
+  
+}
+
+.header__wrapper_first{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.header__catalog{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+}
+
+.header__contacts{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.header__catalog__txt{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.header__search {
+  display: inline-flex;
+  border: 1px solid white;
+  padding: 5px;
+  box-shadow: inset 0px 0px 3px rgba(50, 87, 164, 0.25);
+  border-radius: 10px;  
+}
+
+.header__search-icon {
+  width: 13px;
+  height: 13px;
+  margin: 10px 17px 13px 10px;
+  order: -1;
+}
+
+.header__search-field {
+  border: #FFFFFF;
+  box-shadow: inset 0px 0px 3px rgba(50, 87, 164, 0.25);
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 275px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.header__call_tel{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  color: #3257A4;
+}
+
+.header__tel_number{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.header__viber-icon{
+  width: 21px;
+  height: 21px;
+}
+
+.header__telegram-icon{
+  width: 20px;
+  height: 20px;
+}
+.header__whatsapp-icon{
+  width: 20px;
+  height: 20px;
+}
+
+.header__wrapper_second{
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 25px;
+}
+
+.header__nav{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.header__list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__item{
+  margin-right: 28px;
+}
+
+.header_link{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #111111;
+}
+
+/* наведение и нажатие на ссылки выделяет их */
+.header__link:hover,
+.header__link:active,
+.header__link:focus,
+.header__call_tel:hover,
+.header__call_tel:active,
+.header__call_tel:focus,
+.header__right_menu_item-link:hover,
+.header__right_menu_item-link:active,
+.header__right_menu_item-link:focus,
+.second_box__medical_equipment_item__info__title_other:hover,
+.second_box__medical_equipment_item__info__title_other:active,
+.second_box__medical_equipment_item__info__title_other:focus,
+.second_box_all_medical_equipment:hover,
+.second_box_all_medical_equipment:active,
+.second_box_all_medical_equipment:focus,
+.read-more:hover,
+.read-more:active,
+.read-more:focus,
+.footer_link:hover,
+.footer_link:active,
+.footer_link:focus
+{
+  opacity: .75;
+}
+
+.header__wrapper_second{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.header__right__menu{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 31px;
+}
+
+.header__right_menu_item{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/* Первая секция */
+
+.first__section{
+  padding-top: 150px;
+}
+
+
+.first_box {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background: #3257A4;
+  border-radius: 45px;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 40px rgba(73, 122, 226, 0.15);
+  border-radius: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  top: 25px;
+}
+
+
+.first_box__img{
+  width: 152px;
+  height: 31px;
+}
+
+
+.first_box__title{
+  max-width: 419px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
+}
+
+.first_box__other_text{
+  max-width: 320px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.first_box__other_box{
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.first_box__info{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 11px;
+  align-items: flex-start;
+}
+
+.first_box__all_info{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  gap: 39px;
+  
+}
+.firt_box__go_to_directory{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #EBF4FC;
+  background: linear-gradient(to bottom right, blue, pink);
+  box-shadow: 0px 0px 3px #1A3E8B, inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 204px;
+  height: 47.42px;
+}
+
+.firt_box__go_to_directory:hover{
+    background-color: #112b62;
+}
+
+
+.first_box__slider_button_back{
+  border: 1px solid #3257A4;
+  background: none;
+  width: 41px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.first_box__slider_button_next{
+  border: 1px solid #3257A4;
+  background: none;
+  width: 41px;
+  height: 40px;
+  border-radius: 100%;
+  z-index: 0;
+  transform: rotate(180deg)
+}
+
+.first_block_img1{
+  height: 50%;
+  width: 50%;
+}
+
+
+.first_box__slider{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+
+/* Вторая секция */
+
+.title{
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #3257A4;
+  padding-top: 118px;
+  margin-bottom: 52px;
+}
+
+.second_box__medical_equipment{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  margin: auto;
+  gap: 17px;
+  }
+
+@media (max-width: 480px) {
+   .second_box__medical_equipment {
+      flex-basis: calc(100% - 40px);
+      max-width: 100%;
+   }
+}
+
+
+.second_box__medical_equipment_big_item{
+  width: 396.76px;
+  height: 311.3px;
+  background: #FFFFFF;
+  box-shadow: inset 0px 0px 3px rgba(50, 87, 164, 0.25);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 25px;
+}
+
+.second_box__medical_equipment_item__info__title{
+  font-weight: 500;
+  font-size: 18px;
+  color: #111111;
+  padding-bottom: 15px;
+  
+}
+
+.second_box__medical_equipment_item__info__title_other{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #3257A4;
+}
+
+.second_box__medical_equipment_item__info{
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.second_block__big_item_img{
+  display: flex;
+  justify-content:flex-end;
+  align-items:flex-end;
+}
+
+.second_box__medical_equipment_little_item_all{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items: center;
+  gap: 17px;
+}
+
+.second_box__medical_equipment_little_item{
+  background: #FFFFFF;
+  box-shadow: inset 0px 0px 3px rgba(50, 87, 164, 0.25);
+  border-radius: 15px;
+  width: 396.76px;
+  height: 149.55px; 
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.second_box_all_medical_equipment{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #3257A4;
+  text-align: right;
+  padding-top: 45px;
+}
+
+/* слайдер */
+.wrapper_slider{
+  max-width: 1308px;
+  margin: 0 auto;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  background: #FFFFFF;
+  border: 0.2px solid #EFF5FE;
+  box-shadow: inset 0px 0px 3px rgba(50, 87, 164, 0.25);
+  border-radius: 15px;
+}
+
+.product-image {
+  object-fit: cover;
+}
+
+.product-title {
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: capitalize;
+  color: #111111;
+}
+
+.product-sku {
+  margin-top: 17px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+  color: #355CAC;
+
+}
+
+.product-price {
+  margin-top: 4px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #C41C1B;
+}
+
+.product-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 16px;
+}
+
+.product-buttons button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 113px;
+  height: 26.27px;
+  background: linear-gradient(to bottom right, blue, pink);
+  box-shadow: 0px 0px 3px #1A3E8B, inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+.product-buttons button:hover {
+  background-color: #112b62;
+}
+
+
+/* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden;
+}
+/* Лента слайдов */
+.slick-track{
+  display: flex;
+}
+
+.slider{
+  position: relative;
+  padding: 0px 60px;
+}
+.slider .slick-arrow{
+  position: absolute;
+  top: 50%;
+  margin: -30px 0px 0px 0px;
+  z-index: 10;
+  font-size: 0;
+  width: 30px;
+  height: 50px;
+}
+
+.slider .slick-arrow.slick-prev{
+  left:0;
+  background: url(../img/back_slider.png) 0 0 / 100% no-repeat;
+  border: 0;
+}
+
+.slider .slick-arrow.slick-next{
+  right: 0;
+  border: 0;
+  background: url(../img/next_slider.png)  0 0 / 100% no-repeat ;
+}
+
+
+/* бренды */
+.title_brands{
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #3257A4;
+  padding-top: 49px;
+  margin-bottom: 29px;
+}
+
+.box_brands{
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  box-shadow: inset 0px 0px 3px rgba(50, 87, 164, 0.25);
+  border-radius: 15px;
+  border-radius: 45px;
+  margin-top: 68px;
+}
+
+.brand_grid_box_item{
+  background: #FFFFFF;
+  border-radius: 15px;
+  width: 185px;
+  height: 120px;
+  
+}
+
+.brand_grid_box_item:hover{
+  background: #FFFFFF;
+  box-shadow: 0px 0px 50px rgba(73, 122, 226, 0.2);
+  border-radius: 15px;
+}
+
+.brand_grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  justify-items: center;
+  padding-bottom: 80px;
+}
+
+
+.brand_grid-item {
+  text-align: center;
+}
+
+/* стили всплывающей картинки при нажатии */
+.brand_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  z-index: 999;
+}
+
+.enlarged_img {
+  width: 50%;
+  height: 50%;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.enlarged_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+
+/* новостные карты */
+
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  margin: auto;
+  gap: 17px;
+
+}
+
+ @media (max-width: 480px) {
+ .news-card {
+    flex-basis: calc(100% - 40px);
+    max-width: 100%;
+ }
+}
+
+.news-card {
+  max-width: 100%;
+  width: 390px;
+  height: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background: #FFFFFF;
+  border: 0.2px solid #EFF5FE;
+  box-shadow: 0px 20px 50px rgba(73, 122, 226, 0.2), inset 0px 0px 3px rgba(50, 87, 164, 0.25);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 31px 24px 24px 24px;
+  
+}
+.news-card:hover{
+  border: 0.2px solid #EFF5FE;
+  box-shadow: 0px 20px 50px rgba(73, 122, 226, 0.2), inset 0px 0px 3px rgba(50, 87, 164, 0.25);
+}
+
+.news-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1px;
+  border-radius: 7px;
+
+}
+
+.news-card .date {
+  margin-bottom: 13px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+  color: #3257A4;
+}
+
+.news-card h2 {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #111111;
+}
+
+.news-card .read-more {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #3257A4;
+}
+
+.news-card .author {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+  color: #C41C1B;
+}
+
+.news-card .bottom-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.middle-row{
+  padding-top: 22px;
+  padding-bottom: 22px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  align-items:flex-start;
+}
+
+
+/* подвал */
+.footer{
+  padding-top: 65px;
+  background: #232323;
+  padding-bottom: 134px;
+}
+
+.footer_text{
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.footer_list_nav{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items:flex-start;
+  height: 105px;
+}
+
+.footer_link{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.footer_info{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FFFFFF;
+  width: 270px;
+}
